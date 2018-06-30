@@ -27,6 +27,7 @@
   import { PRODUCTS } from '../http-functions'
   import FilterForm from '../FilterForm'
   import _ from 'lodash'
+  import qs from 'qs'
 
   export default {
     name: 'Table',
@@ -72,7 +73,12 @@
     methods: {
       getProducts: function () {
         this.loading = true
-        return PRODUCTS.get('/', {params: this.params})
+        return PRODUCTS.get('/', {
+          params: this.params,
+          'paramsSerializer': function (params) {
+            return qs.stringify(params, {arrayFormat: 'repeat'})
+          }
+        })
           .then(response => {
             this.products = response.data
             this.loading = false

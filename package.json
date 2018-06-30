@@ -17,7 +17,7 @@
     "typeface-roboto": "0.0.54",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1",
-    "vuetify": "^1.1.0-rc.2"
+    "vuetify": "^1.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.5",

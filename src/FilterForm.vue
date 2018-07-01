@@ -96,7 +96,7 @@
         this.loading = true
         return CATEGORIES.get('/')
           .then(response => {
-            this.availableCategories = response.data.results.map(category => {
+            this.availableCategories = response.data.map(category => {
               return {value: category.id, text: category.name}
             })
             this.loading = false

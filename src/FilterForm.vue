@@ -20,15 +20,12 @@
         v-for="range in ranges"
         :key="range.name"
       >
-        <v-flex xs12>
-          {{range.name}}
-        </v-flex>
         <v-flex
           style="width: 10em; min-width: 6em"
           shrink
         >
           <v-text-field
-            label="min"
+            :label="'min ' + range.name"
             v-model="range.limits[0]"
             type="number"
           />
@@ -38,7 +35,7 @@
           shrink
         >
           <v-text-field
-            label="maks"
+            :label="'maks ' + range.name"
             v-model="range.limits[1]"
             type="number"
           />

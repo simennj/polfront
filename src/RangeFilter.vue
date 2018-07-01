@@ -1,0 +1,56 @@
+<template>
+  <v-layout
+    row
+    wrap
+  >
+    <v-flex
+      md4
+    >
+      <v-text-field
+        :label="'min ' + range.name"
+        v-model="range.limits[0]"
+        type="number"
+      />
+    </v-flex>
+    <v-flex
+      md4
+    >
+      <v-text-field
+        :label="'maks ' + range.name"
+        v-model="range.limits[1]"
+        type="number"
+      />
+    </v-flex>
+    <v-flex
+      md4
+    >
+      <v-range-slider
+        :key="range.name"
+        v-model="range.limits"
+        thumb-label
+        :min="range.min"
+        :max="range.max"
+        :step="range.step"
+      />
+    </v-flex>
+  </v-layout>
+</template>
+<script>
+  export default {
+    name: 'RangeFilter',
+    props: {
+      range: {}
+    }
+  }
+</script>
+<style>
+  /* Hide HTML5 Up and Down arrows. */
+  input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+</style>

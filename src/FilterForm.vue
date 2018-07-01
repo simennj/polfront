@@ -15,50 +15,19 @@
         label="Kategorier"
         multiple
       />
-      <v-layout
-        wrap
-        v-for="range in ranges"
-        :key="range.name"
-      >
-        <v-flex
-          style="width: 10em; min-width: 6em"
-          shrink
-        >
-          <v-text-field
-            :label="'min ' + range.name"
-            v-model="range.limits[0]"
-            type="number"
-          />
-        </v-flex>
-        <v-flex
-          style="width: 10em; min-width: 6em"
-          shrink
-        >
-          <v-text-field
-            :label="'maks ' + range.name"
-            v-model="range.limits[1]"
-            type="number"
-          />
-        </v-flex>
-        <v-flex
-        >
-          <v-range-slider
-            v-model="range.limits"
-            thumb-label
-            :min="range.min"
-            :max="range.max"
-            :step="range.step"
-          />
-        </v-flex>
-      </v-layout>
+      <v-flex v-for="range in ranges">
+        <RangeFilter :range="range"/>
+      </v-flex>
     </v-form>
   </v-container>
 </template>
 <script>
   import { CATEGORIES } from './http-functions'
+  import RangeFilter from './RangeFilter'
 
   export default {
     name: 'filter-form',
+    components: {RangeFilter},
     props: {
       filter: {}
     },
@@ -107,13 +76,4 @@
   }
 </script>
 <style>
-  /* Hide HTML5 Up and Down arrows. */
-  input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-
-  input[type="number"] {
-    -moz-appearance: textfield;
-  }
 </style>

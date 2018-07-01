@@ -10,6 +10,7 @@
       :pagination.sync="pagination"
       :total-items="products.count"
       :loading="loading"
+      :rows-per-page-items="[20, 50, 100]"
     >
       <template slot="items" slot-scope="props">
         <td><a v-bind:href="props.item.url">{{ props.item.name }}</a></td>
@@ -62,9 +63,9 @@
     },
     computed: {
       params () {
-        const {sortBy, descending, page} = this.pagination
+        const {sortBy, descending, page, rowsPerPage} = this.pagination
         const ordering = (descending ? '-' : '') + sortBy
-        return {ordering, page, ...this.filter}
+        return {ordering, page, rowsPerPage, ...this.filter}
       }
     },
     created: function () {

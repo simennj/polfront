@@ -5,19 +5,27 @@ import App from './App'
 import router from './router'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
+import no from './locale/no'
+import en from 'vuetify/src/locale/en'
 
 import 'material-design-icons/iconfont/material-icons.css'
 import 'typeface-roboto/index.css'
 
-Vue.use(Vuetify, { theme: {
-  primary: '#ee44aa',
-  secondary: '#424242',
-  accent: '#82B1FF',
-  error: '#FF5252',
-  info: '#2196F3',
-  success: '#4CAF50',
-  warning: '#FFC107'
-}})
+Vue.use(Vuetify, {
+  theme: {
+    primary: '#ee44aa',
+    secondary: '#424242',
+    accent: '#82B1FF',
+    error: '#FF5252',
+    info: '#2196F3',
+    success: '#4CAF50',
+    warning: '#FFC107'
+  },
+  lang: {
+    locales: {no, en},
+    current: 'no'
+  }
+})
 
 Vue.config.productionTip = false
 
@@ -25,6 +33,6 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
-  components: { App },
+  components: {App},
   template: '<App/>'
 })

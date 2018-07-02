@@ -23,6 +23,7 @@
     </v-flex>
     <v-flex
       md4
+      px-3
     >
       <v-range-slider
         :key="range.name"

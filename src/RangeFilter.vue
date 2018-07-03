@@ -1,10 +1,10 @@
 <template>
   <v-layout
-    row
     wrap
   >
     <v-flex
-      md4
+      sm4
+      xs6
     >
       <v-text-field
         :label="'min ' + range.name"
@@ -13,7 +13,8 @@
       />
     </v-flex>
     <v-flex
-      md4
+      sm4
+      xs6
     >
       <v-text-field
         :label="'maks ' + range.name"
@@ -22,7 +23,7 @@
       />
     </v-flex>
     <v-flex
-      md4
+      sm4
       px-3
     >
       <v-range-slider

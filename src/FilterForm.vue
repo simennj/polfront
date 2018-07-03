@@ -1,25 +1,39 @@
 <template>
-  <v-container
-    fluid
-    grid-list-md
-  >
-    <v-form>
-      <v-text-field
-        v-model="filter.name"
-        label="name"
-      />
-      <v-select
-        :items="availableCategories"
-        :loading="loading"
-        v-model="filter.category"
-        label="Kategorier"
-        multiple
-      />
-      <v-flex v-for="range in ranges">
-        <RangeFilter :range="range"/>
-      </v-flex>
-    </v-form>
-  </v-container>
+  <v-form>
+    <v-container
+      fluid
+      grid-list-md
+    >
+      <v-layout wrap>
+        <v-flex xl3>
+          <v-layout wrap>
+            <v-flex xl12>
+              <v-text-field
+                v-model="filter.name"
+                label="name"
+              />
+            </v-flex>
+            <v-flex xl12>
+              <v-select
+                :items="availableCategories"
+                :loading="loading"
+                v-model="filter.category"
+                label="Kategorier"
+                multiple
+              />
+            </v-flex>
+          </v-layout>
+        </v-flex>
+        <v-flex xl9>
+          <v-layout wrap>
+            <v-flex v-for="range in ranges" md6>
+              <RangeFilter :range="range"/>
+            </v-flex>
+          </v-layout>
+        </v-flex>
+      </v-layout>
+    </v-container>
+  </v-form>
 </template>
 <script>
   import { CATEGORIES } from './http-functions'

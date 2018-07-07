@@ -1,17 +1,11 @@
 <template>
   <v-form>
-    <v-container
-      fluid
-      grid-list-md
-    >
+    <v-container fluid grid-list-md>
       <v-layout wrap>
         <v-flex xl3>
           <v-layout wrap>
             <v-flex xl12>
-              <v-text-field
-                v-model="filter.name"
-                label="name"
-              />
+              <v-text-field v-model="filter.name" label="name"/>
             </v-flex>
             <v-flex xl12>
               <v-select
@@ -26,7 +20,7 @@
         </v-flex>
         <v-flex xl9>
           <v-layout wrap>
-            <v-flex v-for="range in ranges" md6>
+            <v-flex v-for="range in ranges" :key="range.name" md6>
               <RangeFilter :range="range"/>
             </v-flex>
           </v-layout>

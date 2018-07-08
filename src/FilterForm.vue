@@ -30,8 +30,9 @@
   </v-form>
 </template>
 <script>
-  import { CATEGORIES } from './http-functions'
+  import { CATEGORIES, PRODUCT_AGGREGATIONS } from './http-functions'
   import RangeFilter from './RangeFilter'
+  import qs from 'qs'
 
   export default {
     name: 'filter-form',
@@ -64,6 +65,7 @@
     },
     mounted () {
       this.getCategories()
+      this.getAggregations()
     },
     methods: {
       getCategories () {
@@ -79,6 +81,20 @@
             console.log(e)
             this.loading = false
           })
+      },
+      getAggregations () {
+        return PRODUCT_AGGREGATIONS.get('/', {
+          params: this.params,
+          'paramsSerializer': function (params) {
+            return qs.stringify(params, {arrayFormat: 'repeat'})
+          }
+        })
+          .then(response => {
+            for (const range of this.ranges) {
+              range.min = response.data[range.query + '__min']
+              range.max = response.data[range.query + '__max']
+            }
+          }).catch(console.log)
       }
     }
   }

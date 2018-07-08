@@ -42,10 +42,10 @@
     data () {
       return {
         ranges: [
-          {name: 'pris', limits: [0, 99999], min: 0, max: 99999, prefix: 'kr', query: 'price'},
-          {name: 'volum', limits: [0, 20], min: 0, max: 20, step: 0.01, suffix: 'l', query: 'volume'},
-          {name: 'alkohol', limits: [0, 60], min: 0, max: 60, suffix: '%', query: 'alcohol'},
-          {name: 'alkoholpris', limits: [0, 20000], min: 0, max: 20000, suffix: 'kr/cl', query: 'alcohol_price'}
+          {name: 'pris', limits: [], min: 0, max: 99999, prefix: 'kr', query: 'price'},
+          {name: 'volum', limits: [], min: 0, max: 20, step: 0.01, suffix: 'l', query: 'volume'},
+          {name: 'alkohol', limits: [], min: 0, max: 60, suffix: '%', query: 'alcohol'},
+          {name: 'alkoholpris', limits: [], min: 0, max: 20000, suffix: 'kr/cl', query: 'alcohol_price'}
         ],
         loading: true,
         availableCategories: []

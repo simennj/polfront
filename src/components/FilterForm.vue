@@ -30,7 +30,7 @@
   </v-form>
 </template>
 <script>
-  import { CATEGORIES, PRODUCT_AGGREGATIONS } from './http-functions'
+  import { CATEGORIES, PRODUCT_AGGREGATIONS } from '../http-functions'
   import RangeFilter from './RangeFilter'
   import qs from 'qs'
 

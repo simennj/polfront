@@ -13,7 +13,7 @@
 </template>
 
 <script>
-  import FilterForm from './FilterForm'
+  import FilterForm from './components/FilterForm'
 
   export default {
     components: {FilterForm},

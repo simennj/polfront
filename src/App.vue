@@ -3,7 +3,9 @@
     <v-toolbar
       app
     >
-      <v-toolbar-title v-text="title"></v-toolbar-title>
+      <router-link to="/">
+        <v-toolbar-title v-text="title"></v-toolbar-title>
+      </router-link>
     </v-toolbar>
     <router-view>
       <v-content>

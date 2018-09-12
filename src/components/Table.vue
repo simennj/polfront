@@ -26,7 +26,7 @@
 
 <script>
   import { PRODUCTS } from '../http-functions'
-  import FilterForm from '../FilterForm'
+  import FilterForm from './FilterForm'
   import _ from 'lodash'
   import qs from 'qs'
 

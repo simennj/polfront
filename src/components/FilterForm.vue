@@ -30,7 +30,7 @@
   </v-form>
 </template>
 <script>
-  import { CATEGORIES } from './http-functions'
+  import { CATEGORIES } from '../http-functions'
   import RangeFilter from './RangeFilter'
 
   export default {

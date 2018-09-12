@@ -14,7 +14,9 @@
       :must-sort="true"
     >
       <template slot="items" slot-scope="props">
-        <td><a v-bind:href="props.item.url">{{ props.item.name }}</a></td>
+        <td>
+          <router-link :to="{ name: 'product', params: { id: props.item.id } }">{{ props.item.name }}</router-link>
+        </td>
         <td>{{ props.item.category }}</td>
         <td>{{ props.item.volume }}</td>
         <td>{{ props.item.alcohol }}</td>

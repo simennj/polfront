@@ -30,9 +30,8 @@
   </v-form>
 </template>
 <script>
-  import { CATEGORIES, PRODUCT_AGGREGATIONS } from '../http-functions'
+  import { CATEGORIES } from '../http-functions'
   import RangeFilter from './RangeFilter'
-  import qs from 'qs'
 
   export default {
     name: 'filter-form',
@@ -43,10 +42,10 @@
     data () {
       return {
         ranges: [
-          {name: 'pris', limits: [], min: 0, max: 99999, prefix: 'kr', query: 'price'},
-          {name: 'volum', limits: [], min: 0, max: 20, step: 0.01, suffix: 'l', query: 'volume'},
-          {name: 'alkohol', limits: [], min: 0, max: 60, suffix: '%', query: 'alcohol'},
-          {name: 'alkoholpris', limits: [], min: 0, max: 20000, suffix: 'kr/cl', query: 'alcohol_price'}
+          {name: 'pris', limits: [0, 99999], min: 0, max: 99999, prefix: 'kr', query: 'price'},
+          {name: 'volum', limits: [0, 20], min: 0, max: 20, step: 0.01, suffix: 'l', query: 'volume'},
+          {name: 'alkohol', limits: [0, 60], min: 0, max: 60, suffix: '%', query: 'alcohol'},
+          {name: 'alkoholpris', limits: [0, 20000], min: 0, max: 20000, suffix: 'kr/cl', query: 'alcohol_price'}
         ],
         loading: true,
         availableCategories: []
@@ -65,7 +64,6 @@
     },
     mounted () {
       this.getCategories()
-      this.getAggregations()
     },
     methods: {
       getCategories () {
@@ -81,20 +79,6 @@
             console.log(e)
             this.loading = false
           })
-      },
-      getAggregations () {
-        return PRODUCT_AGGREGATIONS.get('/', {
-          params: this.params,
-          'paramsSerializer': function (params) {
-            return qs.stringify(params, {arrayFormat: 'repeat'})
-          }
-        })
-          .then(response => {
-            for (const range of this.ranges) {
-              range.min = response.data[range.query + '__min']
-              range.max = response.data[range.query + '__max']
-            }
-          }).catch(console.log)
       }
     }
   }

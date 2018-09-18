@@ -11,9 +11,12 @@
       :total-items="products.count"
       :loading="loading"
       :rows-per-page-items="[20, 50, 100]"
+      :must-sort="true"
     >
       <template slot="items" slot-scope="props">
-        <td><a v-bind:href="props.item.url">{{ props.item.name }}</a></td>
+        <td>
+          <router-link :to="{ name: 'product', params: { id: props.item.id } }">{{ props.item.name }}</router-link>
+        </td>
         <td>{{ props.item.category }}</td>
         <td>{{ props.item.volume }}</td>
         <td>{{ props.item.alcohol }}</td>
@@ -25,7 +28,7 @@
 </template>
 
 <script>
-  import { PRODUCTS } from '../http-functions'
+  import {PRODUCTS} from '../http-functions'
   import FilterForm from './FilterForm'
   import _ from 'lodash'
   import qs from 'qs'
@@ -43,7 +46,9 @@
           previous: null
         },
         loading: true,
-        pagination: {},
+        pagination: {
+          sortBy: 'alcohol_price'
+        },
         headers: [
           {text: 'Varenavn', value: 'name'},
           {text: 'Kategori', value: 'category'},

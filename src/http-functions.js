@@ -10,8 +10,8 @@ export const PRODUCTS = axios.create({
   baseURL: API_URL + '/products'
 })
 
-export const PRODUCT_AGGREGATIONS = axios.create({
-  baseURL: API_URL + '/products/aggregations'
+export const PRODUCTHISTORY = axios.create({
+  baseURL: API_URL + '/products-history'
 })
 
 export const CATEGORIES = axios.create({

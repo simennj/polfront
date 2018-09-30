@@ -2,14 +2,14 @@
   <v-layout wrap>
     <v-flex sm4 xs6>
       <v-text-field
-        :label="'min ' + range.name"
+        :label="range.name + ' min'"
         v-model="range.limits[0]"
         type="number"
       />
     </v-flex>
     <v-flex sm4 xs6>
       <v-text-field
-        :label="'maks ' + range.name"
+        :label="range.name + ' maks'"
         v-model="range.limits[1]"
         type="number"
       />

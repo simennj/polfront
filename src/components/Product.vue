@@ -1,14 +1,12 @@
 <template>
-  <v-layout>
-    <v-flex>
-      <v-slide-y-transition mode="out-in">
-        <v-layout column align-center>
-          {{ product }}
-          {{ productHistory }}
-        </v-layout>
-      </v-slide-y-transition>
-    </v-flex>
-  </v-layout>
+  <v-container fluid>
+    <v-slide-y-transition mode="out-in">
+      <v-layout column align-center>
+        {{ product }}
+        {{ productHistory }}
+      </v-layout>
+    </v-slide-y-transition>
+  </v-container>
 </template>
 <script>
   import { PRODUCTHISTORY, PRODUCTS } from '../http-functions'

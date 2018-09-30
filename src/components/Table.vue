@@ -21,10 +21,10 @@
               <router-link :to="{ name: 'product', params: { id: props.item.id } }">{{ props.item.name }}</router-link>
             </td>
             <td>{{ props.item.category }}</td>
-            <td>{{ props.item.volume }}</td>
-            <td>{{ props.item.alcohol }}</td>
-            <td>{{ props.item.price }}</td>
-            <td>{{ props.item.alcohol_price }}</td>
+            <td>{{ props.item.volume }} l</td>
+            <td>{{ props.item.alcohol }} %</td>
+            <td>{{ props.item.price }} kr</td>
+            <td>{{ props.item.alcohol_price }} kr/cl</td>
           </template>
         </v-data-table>
       </v-flex>

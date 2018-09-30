@@ -5,7 +5,7 @@
         <v-flex xl3>
           <v-layout wrap>
             <v-flex xl12>
-              <v-text-field v-model="filter.name" label="name"/>
+              <v-text-field v-model="filter.name" label="Navn"/>
             </v-flex>
             <v-flex xl12>
               <v-select

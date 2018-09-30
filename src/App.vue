@@ -8,10 +8,10 @@
       </router-link>
       <v-toolbar-title v-text="title"></v-toolbar-title>
     </v-toolbar>
-    <router-view>
-      <v-content>
-      </v-content>
-    </router-view>
+    <v-content>
+      <router-view>
+      </router-view>
+    </v-content>
   </v-app>
 </template>
 

@@ -1,34 +1,35 @@
 <template>
-  <v-content>
-    <filter-form
-      :filter="filter"
-    />
-    <v-divider/>
-    <v-data-table
-      :headers="headers"
-      :items="products.results"
-      :pagination.sync="pagination"
-      :total-items="products.count"
-      :loading="loading"
-      :rows-per-page-items="[20, 50, 100]"
-      :must-sort="true"
-    >
-      <template slot="items" slot-scope="props">
-        <td>
-          <router-link :to="{ name: 'product', params: { id: props.item.id } }">{{ props.item.name }}</router-link>
-        </td>
-        <td>{{ props.item.category }}</td>
-        <td>{{ props.item.volume }}</td>
-        <td>{{ props.item.alcohol }}</td>
-        <td>{{ props.item.price }}</td>
-        <td>{{ props.item.alcohol_price }}</td>
-      </template>
-    </v-data-table>
-  </v-content>
+  <v-layout>
+    <v-flex>
+      <filter-form
+        :filter="filter"
+      />
+      <v-data-table
+        :headers="headers"
+        :items="products.results"
+        :pagination.sync="pagination"
+        :total-items="products.count"
+        :loading="loading"
+        :rows-per-page-items="[20, 50, 100]"
+        :must-sort="true"
+      >
+        <template slot="items" slot-scope="props">
+          <td>
+            <router-link :to="{ name: 'product', params: { id: props.item.id } }">{{ props.item.name }}</router-link>
+          </td>
+          <td>{{ props.item.category }}</td>
+          <td>{{ props.item.volume }}</td>
+          <td>{{ props.item.alcohol }}</td>
+          <td>{{ props.item.price }}</td>
+          <td>{{ props.item.alcohol_price }}</td>
+        </template>
+      </v-data-table>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
-  import {PRODUCTS} from '../http-functions'
+  import { PRODUCTS } from '../http-functions'
   import FilterForm from './FilterForm'
   import _ from 'lodash'
   import qs from 'qs'

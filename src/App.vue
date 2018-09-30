@@ -4,8 +4,9 @@
       app
     >
       <router-link to="/">
-        <v-toolbar-title v-text="title"></v-toolbar-title>
+        <img src="@/assets/logo.svg"/>
       </router-link>
+      <v-toolbar-title v-text="title"></v-toolbar-title>
     </v-toolbar>
     <router-view>
       <v-content>

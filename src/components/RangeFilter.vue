@@ -17,7 +17,6 @@
     <v-flex px-3>
       <v-range-slider
         v-model="range.limits"
-        thumb-label
         :min="range.min"
         :max="range.max"
         :step="range.step"

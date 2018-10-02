@@ -2,12 +2,12 @@
   <v-form>
     <v-container fluid grid-list-md>
       <v-layout wrap>
-        <v-flex xl3>
+        <v-flex>
           <v-layout wrap>
-            <v-flex xl12>
-              <v-text-field v-model="filter.name" label="name"/>
+            <v-flex md12>
+              <v-text-field v-model="filter.name" label="Navn"/>
             </v-flex>
-            <v-flex xl12>
+            <v-flex md12>
               <v-select
                 :items="availableCategories"
                 :loading="loading"
@@ -18,9 +18,9 @@
             </v-flex>
           </v-layout>
         </v-flex>
-        <v-flex xl9>
+        <v-flex>
           <v-layout wrap>
-            <v-flex v-for="range in ranges" :key="range.name" md6>
+            <v-flex v-for="range in ranges" :key="range.name" md12 sm3>
               <RangeFilter :range="range"/>
             </v-flex>
           </v-layout>

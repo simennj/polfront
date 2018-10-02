@@ -3,10 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import Vuetify from 'vuetify'
+import Vuetify, { en } from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import no from './locale/no'
-import en from 'vuetify/src/locale/en'
 
 import 'material-design-icons/iconfont/material-icons.css'
 import 'typeface-roboto/index.css'

@@ -1,15 +1,15 @@
 <template>
-  <v-content>
+  <v-container fluid>
     <v-slide-y-transition mode="out-in">
       <v-layout column align-center>
         {{ product }}
         {{ productHistory }}
       </v-layout>
     </v-slide-y-transition>
-  </v-content>
+  </v-container>
 </template>
 <script>
-  import {PRODUCTHISTORY, PRODUCTS} from '../http-functions'
+  import { PRODUCTHISTORY, PRODUCTS } from '../http-functions'
 
   export default {
     data () {

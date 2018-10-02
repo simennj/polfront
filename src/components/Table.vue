@@ -24,10 +24,10 @@
               <router-link :to="{ name: 'product', params: { id: props.item.id } }">{{ props.item.name }}</router-link>
             </td>
             <td>{{ props.item.category }}</td>
-            <td>{{ props.item.volume }} l</td>
-            <td>{{ props.item.alcohol }} %</td>
-            <td>{{ props.item.price }} kr</td>
-            <td>{{ props.item.alcohol_price }} kr/cl</td>
+            <td class="text-xs-right">{{ props.item.volume }} l</td>
+            <td class="text-xs-right">{{ props.item.alcohol }} %</td>
+            <td class="text-xs-right">{{ props.item.price }} kr</td>
+            <td class="text-xs-right">{{ props.item.alcohol_price }} kr/cl</td>
           </template>
         </v-data-table>
       </v-flex>
@@ -58,12 +58,12 @@
           sortBy: 'alcohol_price'
         },
         headers: [
-          {text: 'Varenavn', value: 'name'},
-          {text: 'Kategori', value: 'category'},
-          {text: 'Volum', value: 'volume'},
-          {text: 'Alkohol', value: 'alcohol'},
-          {text: 'Pris', value: 'price'},
-          {text: 'Alkoholpris', value: 'alcohol_price'}
+          {text: 'Varenavn', value: 'name', align: 'left'},
+          {text: 'Kategori', value: 'category', align: 'left'},
+          {text: 'Volum', value: 'volume', align: 'right'},
+          {text: 'Alkohol', value: 'alcohol', align: 'right'},
+          {text: 'Pris', value: 'price', align: 'right'},
+          {text: 'Alkoholpris', value: 'alcohol_price', align: 'right'}
         ]
       }
     },
@@ -107,5 +107,4 @@
 </script>
 
 <style scoped>
-
 </style>

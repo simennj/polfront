@@ -1,5 +1,8 @@
 <template>
-  <v-container fluid>
+  <v-container
+    pa-0
+    class="elevation-1 white"
+  >
     <v-layout wrap>
       <v-flex md3>
         <filter-form
